@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin flip Excersise</title>
+  </head>
+  <body>
+    <script>
+      let randomNumber = Math.random();
+      let result = "";
+      let guess = "Tails";
+      if (randomNumber < 0.5) {
+        result = "Heads";
+      } else {
+        result = "Tails";
+      }
+
+      if(result == guess){
+        console.log("You win!");
+      }else{
+        console.log("You lose!");
+      }
+    </script>
+  </body>
+</html>
