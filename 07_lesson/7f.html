@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excersise</title>
+</head>
+<body>
+    <script>
+        function convertToFehrenherit(celcius){
+            let fehrenherit =(celcius * 9 /5) + 32;
+            return fehrenherit
+        }
+
+        function convertToCelcius(fehrenherit){
+            let celcius = (fehrenherit - 32) * 5 / 9;
+            return celcius;
+        }
+
+
+        function convertTemperature(degree, unit){
+            if(unit === "C"){
+                return convertToFehrenherit(degree)+ "F";
+            }else if(unit === "F"){
+                return  convertToCelcius(degree) + "C";
+            }
+        }
+       let unit =  convertTemperature(25,'C')
+       let unit2 = convertTemperature(86,'F')
+
+       console.log(unit);
+       console.log(unit2);
+    </script>
+</body>
+</html>
