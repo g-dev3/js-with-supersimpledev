@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart Project</title>
+  </head>
+  <body>
+    <button
+      onclick="
+        console.log(`Cart Quantity: ${CartQty}`);
+        "
+    >
+      Show Quantity
+    </button>
+    <button
+      onclick="   
+    updateCartQuantity(1)
+    "
+    >
+      Add to Cart
+    </button>
+    <button
+      onclick=" 
+   updateCartQuantity(2)
+    "
+    >
+      +2
+    </button>
+    <button
+      onclick=" 
+    updateCartQuantity(3)
+    "
+    >
+      +3
+    </button>
+    <button
+      onclick="  
+    updateCartQuantity(-1)
+    "
+    >
+      Remove from Cart
+    </button>
+    <button
+      onclick=" 
+    updateCartQuantity(-2)
+    "
+    >
+      -2
+    </button>
+    <button
+      onclick=" 
+    updateCartQuantity(-3)
+    "
+    >
+      -3
+    </button>
+    <button
+      onclick=" CartQty = 0; console.log('Cart was reset'); 
+      console.log(`Cart Quantity: ${CartQty}`);
+      fn() "
+    >
+      Reset Cart
+    </button>
+    <p class="result"></p>
+  </body>
+  <script>
+    let CartQty = 0;
+        fn()
+    function updateCartQuantity(change) {
+      if (CartQty + change > 10) {
+        alert("Cart is full");
+        return;
+      }
+      if (CartQty + change < 0) {
+        alert("Not enough items in the Cart");
+        return;
+      }
+      CartQty += change;
+      fn()
+      console.log(`Cart Quantity: ${CartQty}`);
+    }
+
+    function fn(){
+        const result = document.querySelector('.result')
+    result.innerHTML = `Cart Quantity: ${CartQty}`
+    }
+
+  </script>
+</html>

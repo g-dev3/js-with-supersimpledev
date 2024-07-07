@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Name" class="fillName">
+    <button onclick="NameResult()">Submit</button>
+    <p class="Name"></p>
+</body>
+<script>
+    function NameResult(){
+        const result =  document.querySelector('.fillName').value;
+        const Name = document.querySelector('.Name')
+        Name.innerHTML = `Your Name is: ${result}`
+    }
+</script>
+</html>
