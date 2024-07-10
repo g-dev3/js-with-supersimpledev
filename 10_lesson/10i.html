@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator Project</title>
+    <style>
+        
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: black;
+            color: white;
+        }
+        .num-btn, .sign-btn{
+            border: none;
+            background-color: rgb(51, 51, 51) ;
+            color: white;
+            font-size: 25px;
+            height: 60px;
+            width: 60px;
+            /* padding: 16px 25px; */
+            border-radius: 90px;
+            margin-right: 8px;
+            margin-bottom: 6px;
+            
+        }
+        .sign-btn{
+            background-color: rgb(254, 160, 10);
+            /* vertical-align: middle; */
+            align-items: center;
+        }
+        .result{
+            font-size: 50px;
+            margin-bottom: 0;
+        }
+        .clear-btn{
+            font-size: 18px;
+        }
+    </style>
+  </head>
+  <body>
+      <p class="result"></p>
+    <p>
+      <button class="num-btn" onclick="updateCalculation('1')">1</button>
+      <button class="num-btn" onclick="updateCalculation('2')">2</button>
+      <button class="num-btn" onclick="updateCalculation('3')">3</button>
+      <button class="sign-btn" onclick="updateCalculation('+')">+</button>
+    </p>
+    <p>
+      <button class="num-btn" onclick="updateCalculation('4')">4</button>
+      <button class="num-btn" onclick="updateCalculation('5')">5</button>
+      <button class="num-btn" onclick="updateCalculation('6')">6</button>
+      <button class="sign-btn" onclick="updateCalculation('-')">-</button>
+    </p>
+    <p>
+      <button class="num-btn" onclick="updateCalculation('7')">7</button>
+      <button class="num-btn" onclick="updateCalculation('8')">8</button>
+      <button class="num-btn" onclick="updateCalculation('9')">9</button>
+      <button class="sign-btn" onclick="updateCalculation('*')">*</button>
+    </p>
+    <p>
+      <button class="num-btn" onclick="updateCalculation('0')">0</button>
+      <button class="num-btn" onclick="updateCalculation('.')">.</button>
+      <button class="num-btn" onclick="equal(Calculator)">=</button>
+      <button class="sign-btn" onclick="updateCalculation('/')">/</button>
+    </p>
+    <p><button class="num-btn clear-btn" onclick="Calculator = '';
+    localStorage.removeItem('calculator');
+    fn(Calculator)
+    ">Clear</button></p>
+  </body>
+  <script>
+    let Calculator = localStorage.getItem('calculator') || '';
+    fn(Calculator)
+    function updateCalculation(num) {
+      Calculator += num;
+      console.log(Calculator);
+      fn(Calculator)
+    }
+
+    function equal(Calculator){
+        Calculator = eval(Calculator); 
+        console.log(Calculator);
+        localStorage.setItem('calculator',Calculator)
+        fn(Calculator)
+    }
+
+    function fn(Calculator){
+        const result = document.querySelector('.result')
+        result.innerHTML = Calculator
+    }
+  </script>
+</html>

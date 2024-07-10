@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>youtube subscribe & Amazon shipping</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .subscribe-button {
+        border: none;
+        background-color: black;
+        color: white;
+        padding: 10px 15px;
+        font-weight: bold;
+        border-radius: 12222px;
+        cursor: pointer;
+      }
+      .is-subscribe {
+        background-color: rgb(240, 240, 240);
+        color: black;
+      }
+      .css-cost-input {
+        font-size: 16px;
+        padding: 10px;
+      }
+      .calculate-btn {
+        background-color: green;
+        color: white;
+        border: none;
+        font-size: 16px;
+        padding: 12px 16px;
+        cursor: pointer;
+      }
+      .error {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Youtube Subscribe project -->
+    <p>Youtube Subscribe Button</p>
+    <button onclick="subscrbe()" class="js-subscribe subscribe-button">
+      Subscribe
+    </button>
+
+    <!-- Amazon shipping project -->
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = +$10 shipping</p>
+    <p>Order over $40 = Free shipping</p>
+    <input
+      type="text"
+      placeholder="Cost of Order"
+      class="cost-input css-cost-input"
+      onkeydown="handleCostKeyDown(event)"
+    />
+    <button onclick="Calculate()" class="calculate-btn" ;>Calculate</button>
+    <p class="error"></p>
+    <p class="result"></p>
+  </body>
+  <script>
+    // Youtube Subscribe project in js
+    console.log(document.querySelector(".js-btn"));
+    function subscrbe() {
+      const BtnElement = document.querySelector(".js-subscribe");
+      if (BtnElement.innerText === "Subscribe") {
+        BtnElement.innerHTML = "Subscribed";
+        BtnElement.classList.add("is-subscribe");
+      } else {
+        BtnElement.innerHTML = "Subscribe";
+        BtnElement.classList.remove("is-subscribe");
+      }
+    }
+
+    // Amazon shipping project in js
+    document.querySelector(".btn");
+    function handleCostKeyDown(event) {
+      if (event.key === "Enter") {
+        Calculate();
+      }
+    }
+
+    function Calculate() {
+      let inputEle = document.querySelector(".cost-input");
+      let cost = Number(inputEle.value) * 100;
+      if (cost <= 0) {
+        return (document.querySelector(".error").innerHTML =
+          "Error: Cost can not be less than $0");
+      } else {
+          if (cost < 4000) {
+          cost += 1000;
+        }
+    }
+    document.querySelector(".result").innerHTML = `$${cost / 100}`;
+    }
+  </script>
+</html>
