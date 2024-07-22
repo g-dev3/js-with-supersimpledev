@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excersise</title>
+  </head>
+  <body>
+    <script>
+      const num = [1, 2, 3];
+      const num2 = [-2, -1, 0, 99];
+
+      function addOne(array) {
+        let result = [];
+        for (let i = 0; i < array.length; i++) {
+          let add = array[i] + 1;
+          result.push(add);
+        }
+        return console.log(result);
+      }
+
+      addOne(num);
+      addOne(num2);
+    </script>
+  </body>
+</html>
