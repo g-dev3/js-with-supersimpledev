@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>App</title>
+  </head>
+  <body>
+    <button onclick="notification++;">Add</button>
+    <button onclick="notification--;">Remove</button>
+    <script>
+        let notification =2;
+      document.title = "App";
+      
+      setInterval(() => {
+        if (document.title === "App") {
+            document.title = `(${notification})New messages`;
+        } else {
+          document.title = "App";
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

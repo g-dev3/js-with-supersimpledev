@@ -7,17 +7,22 @@
   </head>
   <body>
     <script>
-      let i = 0;
-      while (i <= 10) {
-        console.log(i);
-        i += 2;
+      let add = function () {
+        console.log(2 + 3);
+      };
+
+      add();
+      add();
+
+      function runTwice(fun) {
+        fun();
+        fun();
       }
 
-      let index = 5;
-      while(index>=0){
-        console.log(index);
-        index--
-      }
+      runTwice(function () {
+        console.log("12b");
+      });
+      runTwice(add);
     </script>
   </body>
 </html>

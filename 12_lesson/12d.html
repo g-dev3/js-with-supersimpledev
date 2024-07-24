@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excersise</title>
+</head>
+<body>
+    <button onclick="btnChanger()">Start</button>
+    <script>
+        function btnChanger(){
+          let btn =   document.querySelector('button');
+          btn.innerHTML = "Loading..."  
+            setTimeout(() => {
+            btn.innerHTML = "Finished!"
+        }, 1000);
+        }
+        
+    </script>
+</body>
+</html>
