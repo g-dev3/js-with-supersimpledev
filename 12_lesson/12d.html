@@ -6,8 +6,11 @@
     <title>Excersise</title>
 </head>
 <body>
-    <button onclick="btnChanger()">Start</button>
+    <button class="js-start-btn">Start</button>
     <script>
+        document.querySelector('.js-start-btn').addEventListener('click',()=>{
+            btnChanger()
+        })
         function btnChanger(){
           let btn =   document.querySelector('button');
           btn.innerHTML = "Loading..."  

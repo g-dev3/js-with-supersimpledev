@@ -6,19 +6,25 @@
     <title>App</title>
   </head>
   <body>
-    <button onclick="notification++;">Add</button>
-    <button onclick="notification--;">Remove</button>
+    <button class="js-add-btn">Add</button>
+    <button class="js-remove-btn">Remove</button>
     <script>
-        let notification =2;
+      let notification = 2;
+      document.querySelector(".js-add-btn").addEventListener("click", () => {
+        notification++;
+      });
+      document.querySelector(".js-remove-btn").addEventListener("click", () => {
+        notification--;
+      });
       document.title = "App";
-      
+
       setInterval(() => {
         if (document.title === "App") {
-            if(notification === 0 ){
-               document.title = "App"
-            }else if(notification > 0){
-                document.title = `(${notification})New messages`;
-            }
+          if (notification === 0) {
+            document.title = "App";
+          } else if (notification > 0) {
+            document.title = `(${notification})New messages`;
+          }
         } else {
           document.title = "App";
         }

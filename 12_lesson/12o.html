@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excersise</title>
+  </head>
+  <body>
+    <script>
+      function removeEgg(foods) {
+        let removedegg = 0;
+        return foods.filter((value) => {
+          if (value === "egg" && removedegg < 2) {
+            removedegg += 1;
+            return false
+          } else {
+            return true
+          }
+        });
+      }
+
+      //   function removeEgg(foods) {
+      //     let count = 0;
+      //     let result = [];
+      //     for (let i = 0; i < foods.length; i++) {
+      //       if (foods[i] === "egg" && count < 2) {
+      //         count += 1;
+      //       } else {
+      //         result.push(foods[i]);
+      //       }
+      //     }
+      //     return result
+      //   }
+
+      let que1 = removeEgg(["egg", "apple", "egg", "egg", "ham"]);
+      console.log(que1);
+    </script>
+  </body>
+</html>
